@@ -83,7 +83,9 @@ class CrimateViewController: UIViewController, CLLocationManagerDelegate, Change
     //Write the updateWeatherData method here:
     func updateCrimeRateData(json : JSON){
         
-        if let crimeResult = json["main"]["temp"].int {
+        print(json["total_incidents"])
+        
+        if let crimeResult = json["total_incidents"].int {
             
             crimeRateDataModel.totalIncident = crimeResult
             
@@ -123,8 +125,17 @@ class CrimateViewController: UIViewController, CLLocationManagerDelegate, Change
     //Write the didUpdateLocations method here:
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let location = locations[locations.count - 1]
-        let currentDate = Date()
-        let passDate = Date(timeIntervalSinceNow: 30)
+    
+        let date: Date = Date()
+        let dateInThePass: Date = Date(timeIntervalSinceNow: 30)
+        
+        let dateFormatterGet = DateFormatter()
+        dateFormatterGet.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
+        let currentDate = dateFormatterGet.string(from: date)
+        let passDate = dateFormatterGet.string(from: dateInThePass)
+        
+        print (currentDate)
+        print (passDate)
         
         if location.horizontalAccuracy > 0 {
             locationManager.stopUpdatingLocation()
