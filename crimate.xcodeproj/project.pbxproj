@@ -3,16 +3,19 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A05A0A025163FA517EEAB71 /* Pods_crimate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F0D260606008EC88B5F907C /* Pods_crimate.framework */; };
 		29BCD76D237B17F500A29E1D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BCD76C237B17F500A29E1D /* AppDelegate.swift */; };
 		29BCD76F237B17F500A29E1D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BCD76E237B17F500A29E1D /* ViewController.swift */; };
 		29BCD774237B17F700A29E1D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 29BCD773237B17F700A29E1D /* Assets.xcassets */; };
 		29BCD777237B17F700A29E1D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29BCD775237B17F700A29E1D /* LaunchScreen.storyboard */; };
 		29BCD783237B18CC00A29E1D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29BCD782237B18CC00A29E1D /* Main.storyboard */; };
 		29BCD785237B1C5700A29E1D /* CrimateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BCD784237B1C5700A29E1D /* CrimateViewController.swift */; };
+		29BCD787237B1D9700A29E1D /* ChangeCityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BCD786237B1D9700A29E1D /* ChangeCityViewController.swift */; };
+		29BCD789237B208200A29E1D /* CrimeRateDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BCD788237B208200A29E1D /* CrimeRateDataModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +27,11 @@
 		29BCD778237B17F700A29E1D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		29BCD782237B18CC00A29E1D /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		29BCD784237B1C5700A29E1D /* CrimateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrimateViewController.swift; sourceTree = "<group>"; };
+		29BCD786237B1D9700A29E1D /* ChangeCityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeCityViewController.swift; sourceTree = "<group>"; };
+		29BCD788237B208200A29E1D /* CrimeRateDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrimeRateDataModel.swift; sourceTree = "<group>"; };
+		9F0D260606008EC88B5F907C /* Pods_crimate.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_crimate.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A7B292D12C10CD78CDB1AE2E /* Pods-crimate.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-crimate.release.xcconfig"; path = "Target Support Files/Pods-crimate/Pods-crimate.release.xcconfig"; sourceTree = "<group>"; };
+		E6684DC33F144201F91B048E /* Pods-crimate.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-crimate.debug.xcconfig"; path = "Target Support Files/Pods-crimate/Pods-crimate.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +39,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0A05A0A025163FA517EEAB71 /* Pods_crimate.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0E65957D4E920B6B4760E55B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9F0D260606008EC88B5F907C /* Pods_crimate.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		29BCD760237B17F500A29E1D = {
 			isa = PBXGroup;
 			children = (
 				29BCD76B237B17F500A29E1D /* crimate */,
 				29BCD76A237B17F500A29E1D /* Products */,
+				C3A57F7A24F3ACC32621B497 /* Pods */,
+				0E65957D4E920B6B4760E55B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -80,6 +99,7 @@
 			isa = PBXGroup;
 			children = (
 				29BCD784237B1C5700A29E1D /* CrimateViewController.swift */,
+				29BCD786237B1D9700A29E1D /* ChangeCityViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -87,8 +107,18 @@
 		29BCD781237B185000A29E1D /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				29BCD788237B208200A29E1D /* CrimeRateDataModel.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		C3A57F7A24F3ACC32621B497 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E6684DC33F144201F91B048E /* Pods-crimate.debug.xcconfig */,
+				A7B292D12C10CD78CDB1AE2E /* Pods-crimate.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -98,9 +128,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 29BCD77B237B17F700A29E1D /* Build configuration list for PBXNativeTarget "crimate" */;
 			buildPhases = (
+				1B446849B8D4E40660BA89C1 /* [CP] Check Pods Manifest.lock */,
 				29BCD765237B17F500A29E1D /* Sources */,
 				29BCD766237B17F500A29E1D /* Frameworks */,
 				29BCD767237B17F500A29E1D /* Resources */,
+				4C40DEBB4189A69E50960843 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -157,6 +189,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		1B446849B8D4E40660BA89C1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-crimate-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4C40DEBB4189A69E50960843 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-crimate/Pods-crimate-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-crimate/Pods-crimate-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-crimate/Pods-crimate-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		29BCD765237B17F500A29E1D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -165,6 +239,8 @@
 				29BCD785237B1C5700A29E1D /* CrimateViewController.swift in Sources */,
 				29BCD76F237B17F500A29E1D /* ViewController.swift in Sources */,
 				29BCD76D237B17F500A29E1D /* AppDelegate.swift in Sources */,
+				29BCD789237B208200A29E1D /* CrimeRateDataModel.swift in Sources */,
+				29BCD787237B1D9700A29E1D /* ChangeCityViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -300,6 +376,7 @@
 		};
 		29BCD77C237B17F700A29E1D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E6684DC33F144201F91B048E /* Pods-crimate.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -318,6 +395,7 @@
 		};
 		29BCD77D237B17F700A29E1D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A7B292D12C10CD78CDB1AE2E /* Pods-crimate.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
