@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CrimeRateDataModel {
+class CrimateDataModel {
     
     //Declare your model variables here
     var totalIncident : Int = 0

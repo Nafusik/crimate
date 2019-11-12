@@ -15,7 +15,7 @@
 		29BCD783237B18CC00A29E1D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29BCD782237B18CC00A29E1D /* Main.storyboard */; };
 		29BCD785237B1C5700A29E1D /* CrimateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BCD784237B1C5700A29E1D /* CrimateViewController.swift */; };
 		29BCD787237B1D9700A29E1D /* ChangeCityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BCD786237B1D9700A29E1D /* ChangeCityViewController.swift */; };
-		29BCD789237B208200A29E1D /* CrimeRateDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BCD788237B208200A29E1D /* CrimeRateDataModel.swift */; };
+		29BCD789237B208200A29E1D /* CrimateDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BCD788237B208200A29E1D /* CrimateDataModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,7 +28,7 @@
 		29BCD782237B18CC00A29E1D /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		29BCD784237B1C5700A29E1D /* CrimateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrimateViewController.swift; sourceTree = "<group>"; };
 		29BCD786237B1D9700A29E1D /* ChangeCityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeCityViewController.swift; sourceTree = "<group>"; };
-		29BCD788237B208200A29E1D /* CrimeRateDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrimeRateDataModel.swift; sourceTree = "<group>"; };
+		29BCD788237B208200A29E1D /* CrimateDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrimateDataModel.swift; sourceTree = "<group>"; };
 		9F0D260606008EC88B5F907C /* Pods_crimate.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_crimate.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7B292D12C10CD78CDB1AE2E /* Pods-crimate.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-crimate.release.xcconfig"; path = "Target Support Files/Pods-crimate/Pods-crimate.release.xcconfig"; sourceTree = "<group>"; };
 		E6684DC33F144201F91B048E /* Pods-crimate.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-crimate.debug.xcconfig"; path = "Target Support Files/Pods-crimate/Pods-crimate.debug.xcconfig"; sourceTree = "<group>"; };
@@ -107,7 +107,7 @@
 		29BCD781237B185000A29E1D /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				29BCD788237B208200A29E1D /* CrimeRateDataModel.swift */,
+				29BCD788237B208200A29E1D /* CrimateDataModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -239,7 +239,7 @@
 				29BCD785237B1C5700A29E1D /* CrimateViewController.swift in Sources */,
 				29BCD76F237B17F500A29E1D /* ViewController.swift in Sources */,
 				29BCD76D237B17F500A29E1D /* AppDelegate.swift in Sources */,
-				29BCD789237B208200A29E1D /* CrimeRateDataModel.swift in Sources */,
+				29BCD789237B208200A29E1D /* CrimateDataModel.swift in Sources */,
 				29BCD787237B1D9700A29E1D /* ChangeCityViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

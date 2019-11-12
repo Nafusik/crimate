@@ -4,6 +4,9 @@
 //
 //  Created by Francesca Koulikov 09/11/2019
 //
+// example
+/* https://private-anon-d55c5c102d-crimeometer.apiary-mock.com/v1/incidents/crowdsourced-raw-data?lat=lat&lon=lon&distance=distance&datetime_ini=datetime_ini&datetime_end=datetime_end&page=page
+*/
 
 import UIKit
 import CoreLocation
@@ -13,13 +16,13 @@ import SwiftyJSON
 class CrimateViewController: UIViewController, CLLocationManagerDelegate, ChangeCityDelegate {
     
     //Constants
-    let CRIME_API_URL = "https://api.crimeometer.com/"
-    let APP_ID = ""
+    let CRIME_API_URL = "https://api.crimeometer.com/v1/incidents/raw-data"
+    let APP_ID = "k3RAzKN1Ag14xTPlculT39RZb38LGgsG8n27ZycG"
     
     
     //TODO: Declare instance variables here
     let locationManager = CLLocationManager()
-    let crimeRateDataModel = CrimeRateDataModel()
+    let crimeRateDataModel = CrimateDataModel()
     
     
     
@@ -47,13 +50,18 @@ class CrimateViewController: UIViewController, CLLocationManagerDelegate, Change
     
     //Write the getWeatherData method here:
     func getCrimeRateData(url: String, parameters: [String: String]){
-        Alamofire.request(url, method: .get, parameters: parameters).responseJSON {
+        let headers = [ "Content-Type": "application/json",
+                        "x-api-key": APP_ID
+        ]
+        
+        Alamofire.request(url, method: .get, parameters: parameters, headers: headers).responseJSON {
             response in
             if response.result.isSuccess{
                 print("Success ! Got the crime Rate data")
-                let weatherJSON : JSON = JSON(response.result.value!)
+                print (response)
+                let crimeJSON : JSON = JSON(response.result.value!)
                 
-                self.updateCrimeRateData(json: weatherJSON)
+                self.updateCrimeRateData(json: crimeJSON)
                 
             }
             else{
@@ -99,8 +107,7 @@ class CrimateViewController: UIViewController, CLLocationManagerDelegate, Change
     //Write the updateUIWithCrimeRateData method here:
     func updateUIWithCrimeRateData(){
         cityLabel.text = crimeRateDataModel.city
-        var crimeRate = ""
-        crimeRateLabel.text = "\(crimeRate)°"
+        crimeRateLabel.text = "\(crimeRateDataModel.totalIncident)"
         crimeIcon.image = UIImage(named: crimeRateDataModel.crimeIconName)
         
     }
@@ -116,6 +123,8 @@ class CrimateViewController: UIViewController, CLLocationManagerDelegate, Change
     //Write the didUpdateLocations method here:
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let location = locations[locations.count - 1]
+        let currentDate = Date()
+        let passDate = Date(timeIntervalSinceNow: 30)
         
         if location.horizontalAccuracy > 0 {
             locationManager.stopUpdatingLocation()
@@ -127,7 +136,9 @@ class CrimateViewController: UIViewController, CLLocationManagerDelegate, Change
             
             let params : [String : String] = ["lat" : String(latitude),
                                               "lon" : String(longitude),
-                                              "appid" : APP_ID]
+                                              "distance": String(34),
+                                              "datetime_ini": "\(passDate)",
+                                              "datetime_end": "\(currentDate)"]
             
             getCrimeRateData(url: CRIME_API_URL, parameters: params)
             
