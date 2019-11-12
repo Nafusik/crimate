@@ -1,3 +1,5 @@
 ${PODS_ROOT}/Target Support Files/Pods-crimate/Pods-crimate-frameworks.sh
 ${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework
+${BUILT_PRODUCTS_DIR}/DatePickerDialog/DatePickerDialog.framework
+${BUILT_PRODUCTS_DIR}/DateTimePicker/DateTimePicker.framework
 ${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework

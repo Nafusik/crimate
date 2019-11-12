@@ -8,4 +8,6 @@ target 'crimate' do
   # Pods for crimate
   pod 'Alamofire'
   pod 'SwiftyJSON'
+  pod 'DateTimePicker'
+  pod 'DatePickerDialog'
 end

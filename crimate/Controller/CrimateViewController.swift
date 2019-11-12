@@ -12,18 +12,26 @@ import UIKit
 import CoreLocation
 import Alamofire
 import SwiftyJSON
+import DateTimePicker
+import DatePickerDialog
 
 class CrimateViewController: UIViewController, CLLocationManagerDelegate, ChangeCityDelegate {
     
     //Constants
     let CRIME_API_URL = "https://api.crimeometer.com/v1/incidents/raw-data"
     let APP_ID = "k3RAzKN1Ag14xTPlculT39RZb38LGgsG8n27ZycG"
+    var pickDate = ""
     
     
     //TODO: Declare instance variables here
     let locationManager = CLLocationManager()
     let crimeRateDataModel = CrimateDataModel()
-    
+    let datePicker = DatePickerDialog(
+        textColor: .red,
+        buttonColor: .red,
+        font: UIFont.boldSystemFont(ofSize: 17),
+        showCancelButton: true
+    )
     
     
     //Pre-linked IBOutlets
@@ -42,6 +50,30 @@ class CrimateViewController: UIViewController, CLLocationManagerDelegate, Change
         locationManager.startUpdatingLocation()
         
     }
+    
+    
+    //MARK: - DatePickerDialog
+    func datePickerTapped() {
+        let currentDate = Date()
+        var dateComponents = DateComponents()
+        dateComponents.month = -3
+        let threeMonthAgo = Calendar.current.date(byAdding: dateComponents, to: currentDate)
+        
+        datePicker.show("DatePickerDialog",
+                        doneButtonTitle: "Done",
+                        cancelButtonTitle: "Cancel",
+                        minimumDate: threeMonthAgo,
+                        maximumDate: currentDate,
+                        datePickerMode: .date) { (date) in
+                            if let dt = date {
+                                let formatter = DateFormatter()
+                                formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
+                                self.pickDate = formatter.string(from: dt)
+                            }
+        }
+    }
+    
+    
     
     
     
@@ -174,6 +206,12 @@ class CrimateViewController: UIViewController, CLLocationManagerDelegate, Change
     //Write the userEnteredANewCityName Delegate method here:
     func userEnteredANewCityName(city: String) {
         
+//        let params : [String : String] = ["lat" : String(latitude),
+//                                          "lon" : String(longitude),
+//                                          "distance": String(34),
+//                                          "datetime_ini": "\(passDate)",
+//            "datetime_end": "\(currentDate)"]
+        
         let params : [String: String] = ["q" : city, "appid" : APP_ID]
         
         getCrimeRateData(url: CRIME_API_URL, parameters: params)
@@ -193,6 +231,10 @@ class CrimateViewController: UIViewController, CLLocationManagerDelegate, Change
     
     // Function that does things
     
+    @IBAction func selectDateButton(_ sender: Any) {
+        
+        datePickerTapped()
+    }
 }
 
 
