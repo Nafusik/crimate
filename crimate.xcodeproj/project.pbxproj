@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0A05A0A025163FA517EEAB71 /* Pods_crimate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F0D260606008EC88B5F907C /* Pods_crimate.framework */; };
+		2933C05C237C4D0100CC5358 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2933C05B237C4D0100CC5358 /* MapViewController.swift */; };
 		29BCD76D237B17F500A29E1D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BCD76C237B17F500A29E1D /* AppDelegate.swift */; };
 		29BCD76F237B17F500A29E1D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BCD76E237B17F500A29E1D /* ViewController.swift */; };
 		29BCD774237B17F700A29E1D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 29BCD773237B17F700A29E1D /* Assets.xcassets */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2933C05B237C4D0100CC5358 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		29BCD769237B17F500A29E1D /* crimate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = crimate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		29BCD76C237B17F500A29E1D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		29BCD76E237B17F500A29E1D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -100,6 +102,7 @@
 			children = (
 				29BCD784237B1C5700A29E1D /* CrimateViewController.swift */,
 				29BCD786237B1D9700A29E1D /* ChangeCityViewController.swift */,
+				2933C05B237C4D0100CC5358 /* MapViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -237,6 +240,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				29BCD785237B1C5700A29E1D /* CrimateViewController.swift in Sources */,
+				2933C05C237C4D0100CC5358 /* MapViewController.swift in Sources */,
 				29BCD76F237B17F500A29E1D /* ViewController.swift in Sources */,
 				29BCD76D237B17F500A29E1D /* AppDelegate.swift in Sources */,
 				29BCD789237B208200A29E1D /* CrimateDataModel.swift in Sources */,
